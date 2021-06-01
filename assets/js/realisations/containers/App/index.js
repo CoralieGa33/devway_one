@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import App from '/assets/js/general/components/App';
+import App from '/assets/js/components/App';
 
-import { } from '/assets/js/general/actions/generalActions';
+import { } from '/assets/js/actions/main';
 
 const mapStateToProps = (state) => ({
 

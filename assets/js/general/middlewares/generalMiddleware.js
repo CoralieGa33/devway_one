@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { } from '/assets/js/general/actions/main';
+import { } from '/assets/js/general/actions/generalActions';
 
 const mainMiddleware = (store) => (next) => (action) => {
     //console.log('on a intercepté une action dans le middleware: ', action);

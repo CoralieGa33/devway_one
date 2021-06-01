@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Nav from '/assets/js/general/components/Nav';
 
-import { } from '/assets/js/general/actions/main';
+import { } from '/assets/js/general/actions/generalActions';
 
 const mapStateToProps = (state) => ({
 

@@ -1,4 +1,4 @@
-import { } from '/assets/js/general/actions/main';
+import { } from '/assets/js/actions/main';
 
 const initialState = {
     // ici l'état initial

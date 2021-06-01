@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 //import PropTypes from 'prop-types';
 
 import Nav from '/assets/js/general/containers/Nav';
-import Footer from '/assets/js/general/containers/Footer';
+import Footer from '/assets/js/general/components/Footer';
 
 const App = () => {
     
