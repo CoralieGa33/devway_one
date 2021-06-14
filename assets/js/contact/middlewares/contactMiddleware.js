@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-import { } from '/assets/js/actions/main';
+import { } from '/assets/js/contact/actions/contactActions';
 
-const mainMiddleware = (store) => (next) => (action) => {
+const contactMiddleware = (store) => (next) => (action) => {
     //console.log('on a intercepté une action dans le middleware: ', action);
 
     switch (action.type) {
@@ -11,4 +11,4 @@ const mainMiddleware = (store) => (next) => (action) => {
             next(action);
     }
 };
-export default mainMiddleware;
+export default contactMiddleware;
