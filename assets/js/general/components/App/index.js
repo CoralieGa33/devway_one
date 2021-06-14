@@ -4,6 +4,11 @@ import { Route, Switch } from 'react-router-dom';
 
 import Nav from '/assets/js/general/containers/Nav';
 import Footer from '/assets/js/general/components/Footer';
+import NotFound from '/assets/js/general/components/NotFound';
+import Home from '/assets/js/home/components/Home';
+import Parcours from '/assets/js/parcours/components/Parcours';
+import Realisations from '/assets/js/realisations/containers/Realisations';
+import Contact from '/assets/js/contact/containers/Contact';
 
 const App = () => {
     
@@ -14,29 +19,24 @@ const App = () => {
                 <Route 
                     exact
                     path="/">
-                    <div>
-                        <h1>Page d&apos;accueil</h1>           
-                    </div>
+                    <Home />
                 </Route>
                 <Route 
                     exact
-                    path="/cv">
-                    <div>
-                        <h1>Page du CV</h1>           
-                    </div>
+                    path="/parcours">
+                    <Parcours />
                 </Route>
                 <Route 
                     exact
                     path="/realisations">
-                    <div>
-                        <h1>Page des réalisations</h1>           
-                    </div>
+                    <Realisations />
                 </Route>
-                <Route>
-                    <div>
-                        <h1>Not found</h1>           
-                    </div>
+                <Route 
+                    exact
+                    path="/contact">
+                    <Contact />
                 </Route>
+                <Route component={NotFound} />
             </Switch>
             <Footer />
         </>
