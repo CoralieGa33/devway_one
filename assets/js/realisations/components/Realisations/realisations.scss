@@ -1,0 +1,17 @@
+@use '/assets/styles/variables';
+
+.realisations-container {
+    min-height: calc(100vh - 6.4rem);
+    text-align: center;
+    color: variables.$base-color;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: variables.$semibold;
+            margin: 25vh auto 5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+}

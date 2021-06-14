@@ -1,0 +1,29 @@
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    .navigation {
+        display: flex;
+        justify-content: space-evenly;
+        height: 3.2rem;
+        background-color: rgb(89, 5, 128);
+        color: rgb(211, 192, 255);
+
+        .navigation-link {
+            width: 30%;
+            padding: 1rem;
+            text-align: center; 
+
+            &:hover {
+                text-decoration: rgb(211, 192, 255) wavy underline;
+            }
+        }
+
+        .active {
+            background-color: rgb(211, 192, 255);;
+            color:rgb(89, 5, 128);
+        }
+    }
+}

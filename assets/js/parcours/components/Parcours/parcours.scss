@@ -1,0 +1,161 @@
+@use '/assets/styles/variables';
+
+.parcours-container {
+    width: 60%;
+    margin: auto;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-ornata {
+    width: 100%;
+    height: 6rem;
+}
+.title {
+    text-align: center;
+    font-weight: variables.$bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: variables.$base-color;
+    margin: 0.5rem;
+}
+
+.top {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    color: variables.$base-color;
+
+    .img-cora {
+        width: 20%;
+        height: 20%;
+        position: relative;
+        top: -2.5rem;
+    }
+
+    .who {
+        text-align: center;
+
+        &-name {
+            font-size: 3rem;
+            font-weight: variables.$bold;
+        }
+
+        &-objective {
+            font-weight: variables.$semibold;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+
+    .left {       
+        margin: 1rem;
+        @media (min-width: 1024px) {
+            width: 33%;
+        }
+
+        .profil, .contact {
+            margin: 1rem;
+        }
+
+        .profil p {
+            text-indent: 1rem;
+        }
+
+        .technos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .miniature {
+            height: 4rem;
+            margin: 0.5rem;
+        }
+
+        .languages {
+            display: flex;
+
+            .flag {
+                text-align: center;
+                margin: auto;
+                font-size: 0.7rem;
+            }
+        }
+
+        .other {
+            margin-top: 1rem;
+
+            p {
+                font-style: italic;
+                font-size: 0.8rem;
+
+                strong {
+                    font-weight: variables.$semibold;
+                    color: variables.$base-color;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .right {
+        margin: 1rem 0;
+        padding: 0 1rem;
+
+        @media (min-width: 1024px) {
+            width: 62%;
+            border-left: 0.6rem dashed variables.$base-color;
+        }
+
+        .what {
+            font-weight: variables.$semibold;
+            color: variables.$base-color;
+            font-size: 1rem;
+        }
+        .what::before {
+            content: '';
+            display: inline-block;
+            height: 1rem;
+            width: 1rem;
+            background-image: url('/assets/styles/images/logoDevway.png');
+            background-size: contain;
+            margin-right: 0.5rem;
+        }
+
+        .where-when {
+            display: flex;
+            justify-content: space-between;
+            color: variables.$base-color;
+            font-style: italic;
+            margin-left: 20%;
+        }
+
+        .description {
+            margin-left: 5%;
+            text-indent: 1.5rem;
+        }
+
+        .how {
+            text-align: center;
+            margin: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+        .formations-title {
+            margin-top: 2rem;
+        }
+
+        .opquast {
+            margin-bottom: 1rem;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}

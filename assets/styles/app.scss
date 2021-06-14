@@ -1,0 +1,8 @@
+@use 'reset';
+@use '/assets/styles/variables';
+
+body {
+    background-color: lightgray;
+    font: 0.9rem variables.$mono sans-serif;
+    height: 100%;
+}
