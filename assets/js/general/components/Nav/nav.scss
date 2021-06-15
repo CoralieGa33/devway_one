@@ -17,7 +17,6 @@ header {
             width: 30%;
             padding: 1rem;
             text-align: center;
-            border-right: 0.1rem ;
 
             &:hover {
                 text-decoration: variables.$light-color wavy underline;
@@ -25,7 +24,7 @@ header {
         }
 
         .active {
-            background-color: variables.$light-color;;
+            background-color: variables.$light-color;
             color:variables.$base-color;
         }
     }
