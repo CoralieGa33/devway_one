@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Contact from '/assets/js/contact/components/Contact';
 
-import { } from '/assets/js/contact/actions/contactActions';
+import { } from '/assets/js/general/actions/generalActions';
 
 const mapStateToProps = (state) => ({
 
