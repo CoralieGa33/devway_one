@@ -1,13 +1,13 @@
 @use '/assets/styles/variables';
 
 .home-container {
-    min-height: calc(100vh - 6.4rem);
+    height: calc(100vh - 6.4rem);
     text-align: center;
+    padding-top: 25vh;
 
     .devway-title {
         color: variables.$base-color;
         font-weight: variables.$bold;
-        font-size: 6rem;
-        margin-top: 25vh;
+        font-size: 6rem;   
     }
 }
