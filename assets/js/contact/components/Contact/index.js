@@ -1,14 +1,22 @@
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 import './contact.scss';
+
+import envelope from '/assets/styles/images/envelope.svg';
 
 const Contact = () => {
     
     return (
         <div className="contact-container">
-            <h1>Page de contact</h1>           
+            <h1 className="contact-title">Me contacter :</h1>
+            <a href="mailto:coralie.ga33@gmail.com">
+                <img
+                    className="contact-img"
+                    src={envelope}
+                    alt="envelope"
+                />
+            </a>
         </div>
     );
 };

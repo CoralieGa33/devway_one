@@ -10,4 +10,11 @@
         font-weight: variables.$bold;
         font-size: 6rem;   
     }
+
+    .devway-citation {
+        color: variables.$base-color;
+        font-size: 1.5rem;
+        font-weight: variables.$light;
+        font-style: italic;
+    }
 }

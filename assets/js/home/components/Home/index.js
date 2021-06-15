@@ -14,6 +14,7 @@ const Home = () => {
                 src={Logo}
                 alt="Devway logo"
             />
+            <p className="devway-citation">&#8220; Si tu ne sais pas, apprend; si tu sais, partage &#8221;</p>
         </div>
     );
 };

@@ -1,3 +1,18 @@
+@use '/assets/styles/variables';
+
 .contact-container {
     min-height: calc(100vh - 6.4rem);
+    padding-top: 25vh;
+    text-align: center;
+
+    .contact-title {
+        font-size: 2rem;
+        color: variables.$base-color;
+        margin-bottom: 2rem;
+    }
+
+    .contact-img {
+        height: 6rem;
+        filter: invert(6%) sepia(96%) saturate(6373%) hue-rotate(287deg) brightness(67%) contrast(103%);
+    }
 }
