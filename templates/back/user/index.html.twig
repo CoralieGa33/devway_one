@@ -1,0 +1,47 @@
+{% extends 'back/index.html.twig' %}
+
+{% block title %}Devway Back{% endblock %}
+
+{% block body %}
+    <h1>Utilisateurs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pseudo</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Mot de passe</th>
+                <th>Créé le</th>
+                <th>Mis à jour le</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                {# <td>{{ user.password }}</td> #}
+                <td>TODO : send reset</td>
+                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="d-flex">
+                    <a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-info m-1">Détails</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-warning m-1">Editer</a>
+                    {{ include('back/user/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucun utilisateur</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Ajouter un utilisateur</a>
+{% endblock %}

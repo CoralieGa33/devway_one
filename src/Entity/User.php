@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -20,11 +21,13 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message = "Merci de choisir un pseudo")
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message = "Merci de saisir un email")
      */
     private $email;
 
@@ -48,6 +51,11 @@ class User implements UserInterface
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -97,6 +105,7 @@ class User implements UserInterface
 
     public function setRoles(array $roles): self
     {
+        $roles[] = 'ROLE_USER';
         $this->roles = $roles;
 
         return $this;

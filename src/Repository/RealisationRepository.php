@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\RealisationsList;
+use App\Entity\Realisation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method RealisationsList|null find($id, $lockMode = null, $lockVersion = null)
- * @method RealisationsList|null findOneBy(array $criteria, array $orderBy = null)
- * @method RealisationsList[]    findAll()
- * @method RealisationsList[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Realisation|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Realisation|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Realisation[]    findAll()
+ * @method Realisation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RealisationsListRepository extends ServiceEntityRepository
+class RealisationRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, RealisationsList::class);
+        parent::__construct($registry, Realisation::class);
     }
 
     // /**
-    //  * @return RealisationsList[] Returns an array of RealisationsList objects
+    //  * @return Realisation[] Returns an array of Realisation objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class RealisationsListRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?RealisationsList
+    public function findOneBySomeField($value): ?Realisation
     {
         return $this->createQueryBuilder('r')
             ->andWhere('r.exampleField = :val')

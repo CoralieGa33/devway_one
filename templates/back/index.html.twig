@@ -2,13 +2,13 @@
 
 {% block title %}Devway Back{% endblock %}
 
-{% block body %}
+{% block adminav %}
     <div id="back">
-        <nav class="nav-container">
-            <p>
-                <a href="" class="btn btn-secondary">Les utilisateurs</a>
-                <a href="" class="btn btn-secondary">Les réalisations</a>
-            </p>
+        <nav class="nav-container mb-3 d-flex">
+            <a href="{{ path('users') }}" class="btn btn-secondary mx-1">Les utilisateurs</a>
+            <a href="{{ path('realisations') }}" class="btn btn-secondary mx-1">Les réalisations</a>
+            <a href="{{ path('back') }}" class="btn btn-warning ms-auto mx-1">Retour</a>
+            <a href="{{ path('app_logout') }}" class="btn btn-danger">Se déconnecter</a>
         </nav>
     </div>
 {% endblock %}
