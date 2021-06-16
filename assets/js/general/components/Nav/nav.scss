@@ -23,6 +23,10 @@ header {
             }
         }
 
+        .back-link {
+            padding: 1rem;
+        }
+
         .active {
             background-color: variables.$light-color;
             color:variables.$base-color;
