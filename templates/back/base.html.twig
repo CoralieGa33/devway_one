@@ -8,6 +8,14 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="card mx-auto" style="width: 10rem; border: none">
+            <img src="{{ asset('images/logoDevway.png') }}" class="card-img-top" alt="Devway logo">
+            <div class="card-body text-center">
+                <p class="card-text fs-3 fw-bold" style="color: #48015B">DEVWAY</p>
+            </div>
+        </div>
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>

@@ -3,14 +3,14 @@
 {% block title %}Devway Connect{% endblock %}
 
 {% block body %}
-    <div class="container col-4 pt-5">
+    <div class="container col-4 pt-5" style="color: #48015B">
         <form method="post" novalidate>
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
             {% if app.user %}
-                <div class="mb-3">
+                <div class="mb-3 text-center">
                     Vous êtes connecté(e) en temps que "{{ app.user.username }}", <a href="{{ path('app_logout') }}">Déconnexion</a>
                 </div>
             
@@ -37,7 +37,7 @@
                     </div>
                 #}
 
-                <button class="btn btn-lg btn-primary mt-2" type="submit">
+                <button class="btn btn-lg mt-2" style="background-color: #48015B; color: #d3c0ff" type="submit">
                     Se connecter
                 </button>
             {% endif %}
