@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class RealisationType extends AbstractType
 {
@@ -14,10 +15,15 @@ class RealisationType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
+                'empty_data' => '',
                 'label' => 'Titre* : '
             ])
-            ->add('description', TextType::class, [
-                'label' => 'Description* : '
+            ->add('description', TextareaType::class, [
+                'empty_data' => '',
+                'label' => 'Description* : ',
+                'attr' => [
+                    'rows' => '3',
+                ]
             ])
             ->add('techno', TextType::class, [
                 'label' => 'Technos utilisées : '

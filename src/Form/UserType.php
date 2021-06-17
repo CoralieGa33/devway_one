@@ -17,9 +17,11 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username', TextType::class, [
+                'empty_data' => '',
                 'label' => 'Pseudo* : '
             ])
             ->add('email', EmailType::class, [
+                'empty_data' => '',
                 'label' => 'Email* : '
             ])
             ->add('roles', ChoiceType::class, [
@@ -32,6 +34,7 @@ class UserType extends AbstractType
                 'label' => 'Rôle(s) supplémentaire(s) :' 
             ])
             ->add('password', PasswordType::class, [
+                'empty_data' => '',
                 'label' => 'Mot de passe* : '
             ])
         ;
@@ -41,6 +44,9 @@ class UserType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'attr' => [
+                'novalidate' => 'novalidate',
+            ]
         ]);
     }
 }
