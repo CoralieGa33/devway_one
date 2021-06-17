@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+    
+    {{ form_errors(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.roles) }}
+    {{ form_row(form.password) }}
+
+    <p class="mt-2">* Champ obligatoire</p>
+    <button class="btn btn-primary m-1">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

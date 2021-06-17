@@ -13,6 +13,7 @@ const Nav = () => {
                 <NavLink exact to="/parcours" className="navigation-link">Mon parcours</NavLink>
                 <NavLink exact to="/realisations" className="navigation-link">Mes réalisations</NavLink>
                 <NavLink exact to="/contact" className="navigation-link">Me contacter</NavLink>
+                <li className="back-link"><a href="/back">&#60;&#183;&#183;&#183;&#62;</a></li>
             </ul>
         </header>
     );

@@ -1,0 +1,42 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Devway Back{% endblock %}
+
+{% block body %}
+    <h1>Realisation "{{ realisation.title }}"</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ realisation.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ realisation.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ realisation.description }}</td>
+            </tr>
+            <tr>
+                <th>Techno</th>
+                <td>{{ realisation.techno }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ realisation.createdAt ? realisation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ realisation.updatedAt ? realisation.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('realisation_edit', {'id': realisation.id}) }}" class="btn btn-warning m-1">Editer</a>
+
+    {{ include('back/realisation/_delete_form.html.twig') }}
+    
+    <a href="{{ path('realisations') }}">Retour à la liste</a>
+{% endblock %}

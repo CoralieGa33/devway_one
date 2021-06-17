@@ -1,0 +1,13 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Devway Back{% endblock %}
+
+{% block body %}
+    <div class="container col-6">
+        <h1>Ajouter une realisation</h1>
+
+        {{ include('back/realisation/_form.html.twig') }}
+
+        <a href="{{ path('realisations') }}">Retour à la liste</a>
+    </div>
+{% endblock %}
