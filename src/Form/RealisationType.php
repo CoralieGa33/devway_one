@@ -28,6 +28,9 @@ class RealisationType extends AbstractType
             ->add('techno', TextType::class, [
                 'label' => 'Technos utilisées : '
             ])
+            ->add('image', TextType::class, [
+                'label' => 'Image : '
+            ])
         ;
     }
 

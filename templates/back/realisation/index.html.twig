@@ -12,6 +12,7 @@
                 <th>Titre</th>
                 <th>Description</th>
                 <th>Techno</th>
+                <th>Image</th>
                 <th>Créé le</th>
                 <th>Mis à jour le</th>
                 <th>Actions</th>
@@ -24,6 +25,7 @@
                 <td>{{ realisation.title }}</td>
                 <td>{{ realisation.description }}</td>
                 <td>{{ realisation.techno }}</td>
+                <td>{{ realisation.image }}</td>
                 <td>{{ realisation.createdAt ? realisation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ realisation.updatedAt ? realisation.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td class="d-flex">
