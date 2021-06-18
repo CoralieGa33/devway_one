@@ -1,0 +1,34 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Devway Back{% endblock %}
+
+{% block body %}
+    <h1>Entrée MakeAList "{{ make_a_list_entry.name }}"</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ make_a_list_entry.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ make_a_list_entry.name }}</td>
+            </tr>
+            <tr>
+                <th>Crée le</th>
+                <td>{{ make_a_list_entry.createdAt ? make_a_list_entry.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Mis à jour le</th>
+                <td>{{ make_a_list_entry.updatedAt ? make_a_list_entry.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('make_a_list_edit', {'id': make_a_list_entry.id}) }}" class="btn btn-warning m-1">Editer</a>
+
+    {{ include('back/mes_realisations/make_a_list/_delete_form.html.twig') }}
+
+    <a href="{{ path('make_a_list_index') }}">Retour à la liste</a>
+{% endblock %}

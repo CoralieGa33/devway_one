@@ -1,0 +1,41 @@
+{% extends 'back/index.html.twig' %}
+
+{% block title %}Devway Back{% endblock %}
+
+{% block body %}
+    <h1>Liste des entrées de MakeAList</h1>
+    <a href="{{ path('make_a_list_new') }}">Ajouter une entrée</a>
+    <a href="{{ path('make_a_list_clean') }}" class="text-danger ms-3" onclick="return confirm('Confirmer la suppression');">Supprimer toutes les entrées</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Créé le</th>
+                <th>Mis à jour le</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for make_a_list_entry in make_a_list_entries %}
+            <tr>
+                <td>{{ make_a_list_entry.id }}</td>
+                <td>{{ make_a_list_entry.name }}</td>
+                <td>{{ make_a_list_entry.createdAt ? make_a_list_entry.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ make_a_list_entry.updatedAt ? make_a_list_entry.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="d-flex">
+                    <a href="{{ path('make_a_list_show', {'id': make_a_list_entry.id}) }}" class="btn btn-info m-1">Détails</a>
+                    <a href="{{ path('make_a_list_edit', {'id': make_a_list_entry.id}) }}" class="btn btn-warning m-1">Editer</a>
+                    {{ include('back/mes_realisations/make_a_list/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucune entrée trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

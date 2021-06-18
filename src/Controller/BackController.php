@@ -22,4 +22,12 @@ class BackController extends AbstractController
             'controller_name' => 'BackController',
         ]);
     }
+
+    /**
+     * @Route("/back/mes-realisations/", name="mes_realisations")
+     */
+    public function list(): Response
+    {
+        return $this->render('back/realisation/index.html.twig');
+    }
 }
