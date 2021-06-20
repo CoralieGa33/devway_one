@@ -9,6 +9,7 @@ import Home from '/assets/js/home/components/Home';
 import Parcours from '/assets/js/parcours/components/Parcours';
 import Realisations from '/assets/js/realisations/containers/Realisations';
 import Contact from '/assets/js/contact/containers/Contact';
+import Makealist from '/assets/js/mesrealisations/makealist/containers/Makealist';
 
 const App = () => {
     
@@ -30,6 +31,11 @@ const App = () => {
                     exact
                     path="/realisations">
                     <Realisations />
+                </Route>
+                <Route 
+                    exact
+                    path="/make-a-list">
+                    <Makealist />
                 </Route>
                 <Route 
                     exact

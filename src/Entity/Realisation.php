@@ -19,10 +19,15 @@ class Realisation
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Assert\NotBlank(message = "Merci de saisir un titre")
      */
     private $title;
+
+    /**
+     * @ORM\Column(type="string", length=100, unique=true)
+     */
+    private $slug;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -68,6 +73,18 @@ class Realisation
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

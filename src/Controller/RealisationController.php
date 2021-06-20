@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Realisation;
 use App\Form\RealisationType;
 use App\Repository\RealisationRepository;
+use App\Service\Slugger;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,13 +29,15 @@ class RealisationController extends AbstractController
     /**
      * @Route("/new", name="realisation_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Slugger $slugger): Response
     {
+        $this->slugger = $slugger;
         $realisation = new Realisation();
         $form = $this->createForm(RealisationType::class, $realisation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $realisation->setSlug($this->slugger->slugify($realisation->getTitle()));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($realisation);
             $entityManager->flush();

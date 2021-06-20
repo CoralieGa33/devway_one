@@ -3,13 +3,19 @@
 {% block title %}Devway Back{% endblock %}
 
 {% block body %}
-    <h1>Realisations</h1>
+    {% for realisation in realisations %}
+        <a href="{{ path('mes_realisations') ~ realisation.slug }}" class="btn btn-success btn-sm m-1">{{ realisation.title }}</a>
+    {% endfor %}
+
+    <h1>Liste des réalisations</h1>
+    <a href="{{ path('realisation_new') }}">Ajouter une réalisation</a>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
+                <th>Slug</th>
                 <th>Description</th>
                 <th>Techno</th>
                 <th>Image</th>
@@ -23,6 +29,7 @@
             <tr>
                 <td>{{ realisation.id }}</td>
                 <td>{{ realisation.title }}</td>
+                <td>{{ realisation.slug }}</td>
                 <td>{{ realisation.description }}</td>
                 <td>{{ realisation.techno }}</td>
                 <td>{{ realisation.image }}</td>
@@ -42,5 +49,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('realisation_new') }}">Ajouter une réalisation</a>
 {% endblock %}

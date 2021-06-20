@@ -1,20 +1,20 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import mainMiddleware from '/assets/js/general/middlewares/generalMiddleware';
+import rootReducer from '/assets/js/general/reducers';
 
-import generalReducer from '/assets/js/general/reducers';
+import generalMiddleware from '/assets/js/general/middlewares/generalMiddleware';
+import makealistMiddleware from '/assets/js/mesrealisations/makealist/middlewares/makealistMiddleware';
 
 const enhancers = composeWithDevTools(
     applyMiddleware(
-        mainMiddleware,
+        generalMiddleware,
+        makealistMiddleware
     ),
 );
 
 const store = createStore(
-    // reducers
-    generalReducer,
-    // enhancers
+    rootReducer,
     enhancers,
 );
 

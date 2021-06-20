@@ -15,4 +15,17 @@
         p {
             font-size: 1.5rem;
         }
+
+        .mesrealisations-list {
+            width: 50%;
+            display: flex;
+            margin: 3rem auto;
+
+            .mesrealisations-link {
+                background-color: variables.$base-color;
+                color: variables.$light-color;
+                padding: 1rem;
+                border-radius: 2rem;
+            }
+        }
 }
