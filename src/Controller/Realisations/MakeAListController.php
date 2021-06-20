@@ -49,7 +49,7 @@ class MakeAListController extends AbstractController
     }
 
     /**
-     * @Route("/clean", name="make_a_list_clean")
+     * @Route("/clean", name="make_a_list_clean", methods={"GET","POST"})
      */
     public function clean(MakeAListEntryRepository $makeAListEntryRepository): Response
     {

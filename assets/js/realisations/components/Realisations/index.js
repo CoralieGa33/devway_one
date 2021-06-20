@@ -1,5 +1,5 @@
 import React from 'react';
-//import { Redirect, Route, Switch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 //import PropTypes from 'prop-types';
 
 import './realisations.scss';
@@ -9,7 +9,12 @@ const Realisations = () => {
     return (
         <div className="realisations-container">
             <h1>Page en cours de réalisation</h1>
-            <p>Revenez voir bientôt !</p>    
+            <p>Revenez voir bientôt !</p>
+
+            {/* Temporary links    */}
+            <ul className="mesrealisations-list">
+                <NavLink exact to="/make-a-list" className="mesrealisations-link">Fais ta liste</NavLink>
+            </ul>
         </div>
     );
 };

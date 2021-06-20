@@ -1,14 +1,15 @@
-import { } from '/assets/js/general/actions/generalActions';
+import { combineReducers } from 'redux';
 
-const initialState = {
-    // ici l'état initial
-};
+// Reducers import
+import generalReducer from './generalReducer';
+import realisationsReducer from '/assets/js/realisations/reducers/realisationsReducer';
+import makealistReducer from '/assets/js/mesrealisations/makealist/reducers/makealistReducer';
 
-const generalReducer = (state = initialState, action = {}) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-};
+const rootReducer = combineReducers({
+    general: generalReducer,
+    realisations: realisationsReducer,
+    makealist: makealistReducer,
+});
 
-export default generalReducer;
+
+export default rootReducer;
