@@ -1,0 +1,13 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Devway Back{% endblock %}
+
+{% block body %}
+    <div class="container col-6">
+        <h1>Todolist : Ajouter une nouvelle tâche</h1>
+
+        {{ include('back/mes_realisations/todolist/_form.html.twig') }}
+
+        <a href="{{ path('todolist_index') }}">Retour à la liste</a>
+    </div>
+{% endblock %}

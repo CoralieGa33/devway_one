@@ -16,12 +16,12 @@
                 <td>{{ make_a_list_entry.name }}</td>
             </tr>
             <tr>
-                <th>Crée le</th>
-                <td>{{ make_a_list_entry.createdAt ? make_a_list_entry.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <th>Créée le</th>
+                <td>{{ make_a_list_entry.createdAt ? make_a_list_entry.createdAt|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Mis à jour le</th>
-                <td>{{ make_a_list_entry.updatedAt ? make_a_list_entry.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <th>Mise à jour le</th>
+                <td>{{ make_a_list_entry.updatedAt ? make_a_list_entry.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>

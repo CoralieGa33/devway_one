@@ -33,8 +33,8 @@
                 <td>{{ realisation.description }}</td>
                 <td>{{ realisation.techno }}</td>
                 <td>{{ realisation.image }}</td>
-                <td>{{ realisation.createdAt ? realisation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ realisation.updatedAt ? realisation.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ realisation.createdAt ? realisation.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ realisation.updatedAt ? realisation.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
                 <td class="d-flex">
                     <a href="{{ path('realisation_show', {'id': realisation.id}) }}" class="btn btn-info m-1">Détails</a>
                     <a href="{{ path('realisation_edit', {'id': realisation.id}) }}" class="btn btn-warning m-1">Editer</a>

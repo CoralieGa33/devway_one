@@ -14,6 +14,8 @@ const Realisations = () => {
             {/* Temporary links    */}
             <ul className="mesrealisations-list">
                 <NavLink exact to="/make-a-list" className="mesrealisations-link">Fais ta liste</NavLink>
+                <NavLink exact to="/todolist" className="mesrealisations-link">TodoList</NavLink>
+
             </ul>
         </div>
     );

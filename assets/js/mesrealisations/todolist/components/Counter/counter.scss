@@ -1,0 +1,11 @@
+@use '/assets/styles/variables';
+
+.counter-container {
+    width: 50%;
+    color: variables.$base-color;
+    border-bottom: 1px solid variables.$base-color;
+    font-size: 1.5em;
+    padding: .5rem 0;
+    margin: .5rem auto;
+    font-weight: bold;
+}

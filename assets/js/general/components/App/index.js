@@ -10,6 +10,7 @@ import Parcours from '/assets/js/parcours/components/Parcours';
 import Realisations from '/assets/js/realisations/containers/Realisations';
 import Contact from '/assets/js/contact/containers/Contact';
 import Makealist from '/assets/js/mesrealisations/makealist/containers/Makealist';
+import TodoList from '/assets/js/mesrealisations/todolist/components/TodoList';
 
 const App = () => {
     
@@ -36,6 +37,11 @@ const App = () => {
                     exact
                     path="/make-a-list">
                     <Makealist />
+                </Route>
+                <Route 
+                    exact
+                    path="/todolist">
+                    <TodoList />
                 </Route>
                 <Route 
                     exact

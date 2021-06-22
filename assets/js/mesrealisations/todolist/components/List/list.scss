@@ -1,0 +1,35 @@
+@use '/assets/styles/variables';
+
+.list-container {
+    width: 50%;
+    margin: auto;
+
+    
+}
+.task-container {
+    background: variables.$light-color;
+    border: 1px solid variables.$base-color;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: left;
+
+    &-checkbox {
+            vertical-align: middle;
+        }
+
+    &-task {
+        margin-left: .5rem;
+        vertical-align: middle;
+    }
+
+    &-task--done {
+        opacity: 0.5;
+        text-decoration: line-through;
+        color: variables.$base-color;
+    }
+
+    &-fav {
+        float: right;
+    }
+}

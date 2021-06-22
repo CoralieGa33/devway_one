@@ -2,13 +2,13 @@
 
 namespace App\Form;
 
-use App\Entity\MakeAListEntry;
+use App\Entity\TodolistTask;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-class MakeAListEntryType extends AbstractType
+class TodolistTaskType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -23,7 +23,7 @@ class MakeAListEntryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => MakeAListEntry::class,
+            'data_class' => TodolistTask::class,
             'attr' => [
                 'novalidate' => 'novalidate',
             ]
