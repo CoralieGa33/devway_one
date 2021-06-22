@@ -2,7 +2,9 @@
 @use '/assets/styles/variables';
 
 body {
-    background-color: lightgray;
+    background-image: linear-gradient(rgb(211, 192, 255, 0.1), rgb(72, 1, 91, 0.2)),
+                        url("/assets/styles/images/abstraitGris.png");
+    background-size: cover;
     font: 0.9rem variables.$mono sans-serif;
     height: 100%;
 }
