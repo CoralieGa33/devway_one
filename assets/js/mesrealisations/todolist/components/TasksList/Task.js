@@ -23,11 +23,18 @@ const Task = ({
         resetCurrentTask();
     }
     return (
-        <li className="task-container" key={task.id}>
-            <input className="checkbox" type="checkbox" checked={task.done} onChange={() => handleChangeDone(task.id, task.name, task.done, task.favorite)}/>
-            <label className={task.done ? 'task task--done': 'task'}>{task.name}</label>
-            <button className="fav"><Star color={task.favorite ? 'orange' : 'grey'} onClick={() => handleChangeFavorite(task.id, task.name, task.done, task.favorite)}/></button>
+        <li className="task-container" key={task.id}> 
+            <label className={task.done ? 'task task--done': 'task'}>{task.name}
+                <input className="checkbox" type="checkbox" checked={task.done} onChange={() => handleChangeDone(task.id, task.name, task.done, task.favorite)} />
+                <span className="checkmark"></span>
+                <button className="fav"><Star color={task.favorite ? 'orange' : 'grey'} onClick={() => handleChangeFavorite(task.id, task.name, task.done, task.favorite)}/></button>
+            </label>
         </li>
+        // <li className="task-container" key={task.id}>
+        //     <input className="checkbox" type="checkbox" checked={task.done} onChange={() => handleChangeDone(task.id, task.name, task.done, task.favorite)}/>
+        //     <label className={task.done ? 'task task--done': 'task'}>{task.name}</label>
+        //     <button className="fav"><Star color={task.favorite ? 'orange' : 'grey'} onClick={() => handleChangeFavorite(task.id, task.name, task.done, task.favorite)}/></button>
+        // </li>
     )
 };
 
