@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Star } from 'react-feather';
+
+import Task from './Task';
 
 import './tasksList.scss';
 
@@ -12,36 +13,26 @@ const TasksList = ({
     toogleTaskDone,
     toogleTaskFavorite,
     resetCurrentTask,
-}) => {
-    const handleChangeDone = (id, name, done, favorite) => {
-        getTaskInfos(id, name, done, favorite);
-        toogleTaskDone();
-        updateTask();
-        resetCurrentTask();
-    }
-    const handleChangeFavorite = (id, name, done, favorite) => {
-        getTaskInfos(id, name, done, favorite);
-        toogleTaskFavorite();
-        updateTask();
-        resetCurrentTask();
-    }
-    return (
-        <div>
-            {loading && <div className="loading">Chargement en cours ...</div>}
-            {!loading && (
-                <ul className="list-container">
-                    {tasksList ? tasksList.map((task) => (
-                        <li className="task-container" key={task.id}>
-                            <input className="checkbox" type="checkbox" checked={task.done} onChange={() => handleChangeDone(task.id, task.name, task.done, task.favorite)}/>
-                            <label className={task.done ? 'task task--done': 'task'}>{task.name}</label>
-                            <button className="fav"><Star color={task.favorite ? 'orange' : 'grey'} onClick={() => handleChangeFavorite(task.id, task.name, task.done, task.favorite)}/></button>
-                        </li>
-                    )) : null }
-                </ul>
-            )}
-        </div>
-    )
-};
+}) => (
+    <div>
+        {loading && <div className="loading">Chargement en cours ...</div>}
+        {!loading && (
+            <ul className="list-container">
+                {tasksList ? tasksList.map((task) => (
+                    <Task 
+                        key={task.id}
+                        task={task}
+                        getTaskInfos={getTaskInfos}
+                        updateTask={updateTask}
+                        toogleTaskDone={toogleTaskDone}
+                        toogleTaskFavorite={toogleTaskFavorite}
+                        resetCurrentTask={resetCurrentTask}
+                    />
+                )) : null }
+            </ul>
+        )}
+    </div>
+);
 
 
 TasksList.propTypes = {

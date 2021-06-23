@@ -16,7 +16,7 @@ const todolistMiddleware = (store) => (next) => (action) => {
             axios.get(`/api/todolist`)
             .then((response) => {
                 store.dispatch(saveTasksList(response.data));
-                store.dispatch(countTasks(response.data.length));
+                store.dispatch(countTasks(response.data.filter((task) => !task.done).length));
             })
             .catch((error) => {
                 console.warn(error.message);
