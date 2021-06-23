@@ -8,6 +8,7 @@ import {
     fetchTasks,
     resetInputNewtask,
     UPDATE_TASK,
+    DELETE_TASK,
 } from '/assets/js/mesrealisations/todolist/actions/todolistActions';
 
 const todolistMiddleware = (store) => (next) => (action) => {
@@ -45,6 +46,15 @@ const todolistMiddleware = (store) => (next) => (action) => {
                 console.warn(error);
             });
             break;
+            case DELETE_TASK:
+                axios.delete(`/api/todolist/delete/${store.getState().todolist.currentTaskId}`)
+                .then(() => {
+                    store.dispatch(fetchTasks());
+                })
+                .catch((error) => {
+                    console.warn(error);
+                });
+                break;
         default:
             next(action);
     }

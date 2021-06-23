@@ -13,6 +13,7 @@ const TasksList = ({
     toogleTaskDone,
     toogleTaskFavorite,
     resetCurrentTask,
+    deleteTask,
 }) => (
     <div>
         {loading && <div className="loading">Chargement en cours ...</div>}
@@ -27,6 +28,7 @@ const TasksList = ({
                         toogleTaskDone={toogleTaskDone}
                         toogleTaskFavorite={toogleTaskFavorite}
                         resetCurrentTask={resetCurrentTask}
+                        deleteTask={deleteTask}
                     />
                 )) : null }
             </ul>
@@ -52,6 +54,7 @@ TasksList.propTypes = {
     toogleTaskDone: PropTypes.func.isRequired,
     toogleTaskFavorite: PropTypes.func.isRequired,
     resetCurrentTask: PropTypes.func.isRequired,
+    deleteTask: PropTypes.func.isRequired,
 };
 
 export default TasksList;

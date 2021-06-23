@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import TasksList from '/assets/js/mesrealisations/todolist/components/TasksList';
 
-import { getTaskInfos, updateTask, toogleTaskDone, toogleTaskFavorite, resetCurrentTask } from '/assets/js/mesrealisations/todolist/actions/todolistActions';
+import { getTaskInfos, updateTask, toogleTaskDone, toogleTaskFavorite, resetCurrentTask, deleteTask } from '/assets/js/mesrealisations/todolist/actions/todolistActions';
 
 const mapStateToProps = (state) => ({
     tasksList: state.todolist.tasksList,
@@ -24,6 +24,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     resetCurrentTask: () => {
         dispatch(resetCurrentTask());
+    },
+    deleteTask: () => {
+        dispatch(deleteTask());
     },
 });
 

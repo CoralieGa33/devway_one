@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Star } from 'react-feather';
+import { Star, Trash2 } from 'react-feather';
 
 const Task = ({
     task,
@@ -9,6 +9,7 @@ const Task = ({
     toogleTaskDone,
     toogleTaskFavorite,
     resetCurrentTask,
+    deleteTask,
 }) => {
     const handleChangeDone = (id, name, done, favorite) => {
         getTaskInfos(id, name, done, favorite);
@@ -22,19 +23,20 @@ const Task = ({
         updateTask();
         resetCurrentTask();
     }
+    const handleClick = (id, name, done, favorite) => {
+        getTaskInfos(id, name, done, favorite);
+        deleteTask();
+        resetCurrentTask();
+    }
     return (
         <li className="task-container" key={task.id}> 
             <label className={task.done ? 'task task--done': 'task'}>{task.name}
                 <input className="checkbox" type="checkbox" checked={task.done} onChange={() => handleChangeDone(task.id, task.name, task.done, task.favorite)} />
                 <span className="checkmark"></span>
-                <button className="fav"><Star color={task.favorite ? 'orange' : 'grey'} onClick={() => handleChangeFavorite(task.id, task.name, task.done, task.favorite)}/></button>
+                <button className="trash" onClick={() => handleClick(task.id, task.name, task.done, task.favorite)}><Trash2/></button>
+                <button className="fav" onClick={() => handleChangeFavorite(task.id, task.name, task.done, task.favorite)}><Star color={task.favorite ? 'orange' : 'grey'}/></button>
             </label>
         </li>
-        // <li className="task-container" key={task.id}>
-        //     <input className="checkbox" type="checkbox" checked={task.done} onChange={() => handleChangeDone(task.id, task.name, task.done, task.favorite)}/>
-        //     <label className={task.done ? 'task task--done': 'task'}>{task.name}</label>
-        //     <button className="fav"><Star color={task.favorite ? 'orange' : 'grey'} onClick={() => handleChangeFavorite(task.id, task.name, task.done, task.favorite)}/></button>
-        // </li>
     )
 };
 
@@ -52,6 +54,7 @@ Task.propTypes = {
     toogleTaskDone: PropTypes.func.isRequired,
     toogleTaskFavorite: PropTypes.func.isRequired,
     resetCurrentTask: PropTypes.func.isRequired,
+    deleteTask: PropTypes.func.isRequired,
 };
 
 export default Task;

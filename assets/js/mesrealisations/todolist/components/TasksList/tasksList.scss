@@ -65,8 +65,15 @@
                 transform: rotate(45deg);
             }
         }
-        
+
         .fav {
+            float: right;
+            border: none;
+            background-color: variables.$light-color;
+        }
+
+        .trash {
+            color: #D8042C;
             float: right;
             border: none;
             background-color: variables.$light-color;

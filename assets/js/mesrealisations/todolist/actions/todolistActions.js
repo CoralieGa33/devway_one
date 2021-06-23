@@ -10,6 +10,7 @@ export const UPDATE_TASK = 'UPDATE_TASK';
 export const TOOGLE_TASK_DONE = 'TOOGLE_TASK_DONE';
 export const TOOGLE_TASK_FAVORITE = 'TOOGLE_TASK_FAVORITE';
 export const RESET_CURRENT_TASK = 'RESET_CURRENT_TASK';
+export const DELETE_TASK = 'DELETE_TASK';
 
 // action creators
 export const fetchTasks = () => ({
@@ -51,4 +52,7 @@ export const toogleTaskFavorite = () => ({
 });
 export const resetCurrentTask = () => ({
     type: RESET_CURRENT_TASK,
+});
+export const deleteTask = () => ({
+    type: DELETE_TASK,
 });
