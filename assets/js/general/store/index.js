@@ -5,11 +5,13 @@ import rootReducer from '/assets/js/general/reducers';
 
 import generalMiddleware from '/assets/js/general/middlewares/generalMiddleware';
 import makealistMiddleware from '/assets/js/mesrealisations/makealist/middlewares/makealistMiddleware';
+import todolistMiddleware from '/assets/js/mesrealisations/todolist/middlewares/todolistMiddleware';
 
 const enhancers = composeWithDevTools(
     applyMiddleware(
         generalMiddleware,
-        makealistMiddleware
+        makealistMiddleware,
+        todolistMiddleware
     ),
 );
 

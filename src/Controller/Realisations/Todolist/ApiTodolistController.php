@@ -19,7 +19,7 @@ class ApiTodolistController extends AbstractController
      */
     public function getTodolistTasks(TodolistTaskRepository $todolistTaskRepository): Response
     {
-        $todolistTasks = $todolistTaskRepository->findAll();
+        $todolistTasks = $todolistTaskRepository->findby([], ['done' => 'ASC', 'favorite' => 'DESC']);
 
         $response = $this->json($todolistTasks);
         $response->headers->set('Content-Type', 'application/json');
@@ -45,13 +45,13 @@ class ApiTodolistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/update", name="todolist_update", methods={"GET","POST"})
+     * @Route("/update/{id<\d+>}", name="todolist_update", methods={"PUT"})
      */
     public function update($id, Request $request, TodolistTaskRepository $todolistTaskRepository, TodolistTask $todolistTask): Response
     {
         $data = $request->toArray();
 
-        $todolistTask = $todolistTaskRepository->findOneById($data['id']);
+        $todolistTask = $todolistTaskRepository->findOneById($id);
         $todolistTask->setDone($data['done']);
         $todolistTask->setFavorite($data['favorite']);
         $todolistTask->setUpdatedAt(new \DateTime());

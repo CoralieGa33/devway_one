@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import './counter.scss';
 
-const Counter = ({ nbTasks }) => (
+const Counter = ({ nbTasks}) => (
     <div className="counter-container">
-        {nbTasks} {nbTasks <= 1 ? 'tâche' : 'tâches'} en cours
+        <p>{nbTasks} {nbTasks <= 1 ? 'tâche' : 'tâches'} en cours</p>
     </div>
 );
 
 Counter.propTypes = {
-    nbTasks: PropTypes.number.isRequired,
+    nbTasks: PropTypes.number,
 };
 
 export default Counter;
