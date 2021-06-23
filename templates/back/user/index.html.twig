@@ -28,8 +28,8 @@
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 {# <td>{{ user.password }}</td> #}
                 <td>TODO : send reset</td>
-                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.createdAt ? user.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ user.updatedAt ? user.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
                 <td class="d-flex">
                     <a href="{{ path('user_show', {'id': user.id}) }}" class="btn btn-info m-1">Détails</a>
                     <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-warning m-1">Editer</a>

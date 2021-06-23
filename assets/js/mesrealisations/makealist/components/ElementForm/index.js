@@ -34,7 +34,7 @@ const ElementForm = ({
 };
 
 ElementForm.propTypes = {
-    newElement: PropTypes.string,
+    newElement: PropTypes.string.isRequired,
     handleAdd: PropTypes.func.isRequired,
     changeInputElement: PropTypes.func.isRequired,
     handleDeleteAll: PropTypes.func.isRequired,

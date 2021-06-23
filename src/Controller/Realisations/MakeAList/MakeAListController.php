@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Realisations;
+namespace App\Controller\Realisations\MakeAList;
 
 use App\Entity\MakeAListEntry;
 use App\Form\MakeAListEntryType;

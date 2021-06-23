@@ -28,7 +28,7 @@ const makealistReducer = (state = initialState, action = {}) => {
             return {
                 ...state,
                 newElement: "",
-            }
+            };
         case SAVE_ELEMENTS_LIST:
             return {
                 ...state,

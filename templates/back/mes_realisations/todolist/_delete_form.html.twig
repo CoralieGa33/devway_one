@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('todolist_delete', {'id': todolist_task.id}) }}" onsubmit="return confirm('Confirmer la suppression');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ todolist_task.id) }}">
+    <button class="btn  btn-danger m-1">Supprimer</button>
+</form>

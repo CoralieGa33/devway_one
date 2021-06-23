@@ -12,8 +12,8 @@
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>Créé le</th>
-                <th>Mis à jour le</th>
+                <th>Créée le</th>
+                <th>Mise à jour le</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -22,8 +22,8 @@
             <tr>
                 <td>{{ make_a_list_entry.id }}</td>
                 <td>{{ make_a_list_entry.name }}</td>
-                <td>{{ make_a_list_entry.createdAt ? make_a_list_entry.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ make_a_list_entry.updatedAt ? make_a_list_entry.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ make_a_list_entry.createdAt ? make_a_list_entry.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+                <td>{{ make_a_list_entry.updatedAt ? make_a_list_entry.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
                 <td class="d-flex">
                     <a href="{{ path('make_a_list_show', {'id': make_a_list_entry.id}) }}" class="btn btn-info m-1">Détails</a>
                     <a href="{{ path('make_a_list_edit', {'id': make_a_list_entry.id}) }}" class="btn btn-warning m-1">Editer</a>

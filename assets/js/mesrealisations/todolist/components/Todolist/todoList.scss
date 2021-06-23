@@ -1,0 +1,14 @@
+@use '/assets/styles/variables';
+
+.todolist-container {
+    min-height: calc(100vh - 6.4rem);
+    text-align: center;
+    color: variables.$base-color;
+    padding-top: 10vh;
+
+    .todolist-title {
+        font-size: 2rem;
+        font-weight: variables.$semibold;
+        margin: 0 auto;
+    }
+}

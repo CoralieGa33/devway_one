@@ -1,0 +1,42 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Devway Back{% endblock %}
+
+{% block body %}
+    <h1>Todolist : Tâche "{{ todolist_task.name }}"</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ todolist_task.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ todolist_task.name }}</td>
+            </tr>
+            <tr>
+                <th>Faite</th>
+                <td>{{ todolist_task.done ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Favorite</th>
+                <td>{{ todolist_task.favorite ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Créée le</th>
+                <td>{{ todolist_task.createdAt ? todolist_task.createdAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Mise à jour le</th>
+                <td>{{ todolist_task.updatedAt ? todolist_task.updatedAt|date('d-m-Y H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('todolist_edit', {'id': todolist_task.id}) }}" class="btn btn-warning m-1">Editer</a>
+
+    {{ include('back/mes_realisations/todolist/_delete_form.html.twig') }}
+
+    <a href="{{ path('todolist_index') }}">Retour à la liste</a>
+{% endblock %}

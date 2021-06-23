@@ -1,0 +1,83 @@
+@use '/assets/styles/variables';
+
+.list-container {
+    width: 50%;
+    margin: auto;
+}
+
+.task-container {
+    background: variables.$light-color;
+    border: 1px solid variables.$base-color;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    text-align: left;
+}
+    .task {
+        width: 100%;
+        vertical-align: middle;
+        position: relative;
+        padding-left: 2rem;
+        font-size: 1rem;
+
+        &--done {
+            opacity: 0.5;
+            text-decoration: line-through;
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
+
+            &:checked ~ .checkmark {
+                background-color: variables.$base-color;
+            }
+
+            &:checked ~ .checkmark:after {
+                display: block;
+            }
+        }
+        
+        .checkmark {
+            position: absolute;
+            top: 0.15rem;
+            left: 0;
+            height: 1rem;
+            width: 1rem;
+            background-color: #eee;
+            border: 1px solid variables.$base-color;
+            border-radius: 0.2rem;
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 0.2rem;
+                top: 0.05rem;
+                width: 0.5rem;
+                height: 10px;
+                border: solid white;
+                border-width: 0 0.2rem 0.2rem 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+
+        .fav {
+            float: right;
+            border: none;
+            background-color: variables.$light-color;
+        }
+
+        .trash {
+            color: #D8042C;
+            float: right;
+            border: none;
+            background-color: variables.$light-color;
+        }
+    }
+
+
