@@ -11,6 +11,8 @@ import PHP from '/assets/styles/images/php-mysql.png';
 import Symfo from '/assets/styles/images/logo-symfony.png';
 import ReactLogo from '/assets/styles/images/react.png';
 import ReduxLogo from '/assets/styles/images/reduxLogo.png';
+import JavaLogo from '/assets/styles/images/java.png';
+import PythonLogo from '/assets/styles/images/python.png';
 import Opquast from '/assets/styles/images/OpQuast_KHLU4V.svg';
 import France from '/assets/styles/images/France.png';
 import UK from '/assets/styles/images/United_Kingdom.png';
@@ -33,9 +35,9 @@ const Parcours = () => {
                     alt="coralie photo"
                 />
                 <div className="who">
-                    <h1 className="who-name">GARGOT Coralie</h1>
-                    <h2 className="who-title title">Développeuse web junior</h2>
-                    <p className="who-objective">en recherche de contrat d&apos;apprentissage (avec RQTH)</p>
+                    <h1 className="who-name">Coralie GARGOT</h1>
+                    <h2 className="who-title title">Conceptrice Développeuse d&apos;Applications</h2>
+                    <p className="who-objective">en recherche d&apos;un stage du 19 avril au 13 juillet 2022</p>
                 </div>
             </div>
 
@@ -43,9 +45,9 @@ const Parcours = () => {
                 <div className="left">
                     <div className="profil">
                         <h3 className="profil-title title">Profil</h3>
-                        <p>Passionnée par l’informatique depuis mon plus jeune âge, j’ai choisi de me reconvertir dans le développement web. J’aime apprendre et chercher, et ce domaine en perpétuelle évolution me correspond tout à fait.</p>
+                        <p>Passionnée par l’informatique depuis toujours, j’ai choisi de me reconvertir dans le développement web. Je suis curieuse, rigoureuse et autonome, j’aime les défis, chercher, apprendre, et ce domaine en perpétuelle évolution me correspond tout à fait.</p>
                         <p>J’ai suivi une formation intensive de 6 mois au métier de développeur web fullstack avec l’école O’Clock.</p>
-                        <p>Je souhaite maintenant poursuivre dans cette voie et me former en alternance pendant un an pour préparer le Titre Professionnel de « Concepteur Développeur d’applications ».</p>
+                        <p>Je souhaite maintenant poursuivre dans cette voie et me former encore un an pour préparer le Titre Professionnel de «Concepteur Développeur d’applications».</p>
                     </div>
                     <div className="competences">
                         <h3 className="competences-title title">Compétences techniques</h3>
@@ -88,6 +90,18 @@ const Parcours = () => {
                                 src={ReduxLogo}
                                 alt="Redux logo"
                             />
+                            <img
+                                className="miniature"
+                                id="java-logo"
+                                src={JavaLogo}
+                                alt="Java logo"
+                            />
+                            <img
+                                className="miniature"
+                                id="python-logo"
+                                src={PythonLogo}
+                                alt="Python logo"
+                            />
                         </div>
                         <div className="languages">
                             <figure className="flag">
@@ -97,7 +111,7 @@ const Parcours = () => {
                                     src={France}
                                     alt="France flag"
                                 />
-                                <figcaption>Maternelle</figcaption>
+                                <figcaption>Langue maternelle</figcaption>
                             </figure>
                             <figure className="flag">
                                 <img
@@ -106,14 +120,15 @@ const Parcours = () => {
                                     src={UK}
                                     alt="United-Kingdom flag"
                                 />
-                                <figcaption>Intermédiaire</figcaption>
+                                <figcaption>Anglais technique</figcaption>
                             </figure>
                         </div>
                     </div>
                     <div className="other">
                         <h3 className="other-title title">Et aussi</h3>
-                        <p><strong>Permis B</strong> + véhicule</p>
+                        <p><strong>Permis B</strong> + véhicule personnel</p>
                         <p><strong>Passions :</strong> Équitation, aquariophilie, jeux vidéos</p>
+                        <p><strong>Reconnue travailleur handicapé (RQTH)</strong></p>
                     </div>
                 </div>
                 <div className="right">
@@ -139,10 +154,12 @@ const Parcours = () => {
                         <h3 className="formations-title title">Formations</h3>
                             <ul>
                                 <li>
-                                    <h4 className="what">Concepteur développeur d’applications en alternance</h4>
-                                    <div className="where-when"><p className="where">Wild Code School</p><p className="when">du 14/09/2021 au 13/09/2022</p></div>
-                                    <p className="description">3 semaines en entreprise et 1 semaine en formation</p>
-                                    <p className="how">[SCRUM, React, NodeJS, Typescript, NoSql (MongoDb), MySQL, API, GraphQL, Docker, Tests (JEST), Flutter/React Native]</p>
+                                    <h4 className="what">Concepteur développeur d’applications</h4>
+                                    <div className="where-when"><p className="where">AFPA</p><p className="when">du 30/08/2021 au 05/08/2022</p></div>
+                                    <p className="description">Concevoir et développer des composants d&apos;interface utilisateur en intégrant les recommandations de sécurité.</p>
+                                    <p className="description">Concevoir et développer la persistance des données en intégrant les recommandations de sécurité.</p>
+                                    <p className="description">Concevoir et développer une application multicouche répartie en intégrant les recommandations de sécurité.</p>
+                                    <p className="how">[HTML, CSS, PHP, JavaScript, SQL, Symfony, API, React, Python, Java, Git - GitHub]</p>
                                 </li>
                                 <li>
                                     <h4 className="what">Développeur web - Spécialisation Symfony</h4>
