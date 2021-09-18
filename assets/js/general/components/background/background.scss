@@ -1,0 +1,12 @@
+
+.background {
+    background-image: linear-gradient(rgb(211, 192, 255, 0.1), rgb(72, 1, 91, 0.2)),
+                        url("/assets/styles/images/abstraitGris.png");
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -100;
+}

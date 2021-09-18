@@ -7,6 +7,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (min-width: 600px) and (max-width: 1100px) {
+        width: 75%;
+    }
+    @media  (max-width: 599px) {
+        width: 90%;
+    }
 }
 .img-ornata {
     width: 100%;
@@ -27,6 +34,10 @@
     justify-content: space-between;
     color: variables.$base-color;
 
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
+
     .img-cora {
         width: 20%;
         height: 20%;
@@ -45,25 +56,31 @@
         &-objective {
             font-weight: variables.$semibold;
         }
+
+        @media (max-width: 900px) {
+            margin-top: -2.5rem;
+        }
     }
 }
 
 .content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     .left {       
         margin: 1rem;
         @media (min-width: 1024px) {
-            width: 33%;
+            width: 30%;
         }
 
-        .profil, .contact {
-            margin: 1rem;
+        .profil, .competences {
+            margin: 1rem 0.5rem 3rem;
         }
 
         .profil p {
             text-indent: 1rem;
+            padding: 0 1rem;
         }
 
         .technos {
@@ -75,6 +92,10 @@
         .miniature {
             height: 4rem;
             margin: 0.5rem;
+        }
+
+        #symfo-logo{
+            height: 5rem;
         }
 
         .languages {
@@ -108,10 +129,17 @@
         padding: 0 1rem;
 
         @media (min-width: 1024px) {
-            width: 62%;
-            border-left: 0.6rem dashed variables.$base-color;
+            width: 66%;
+            border-left: 0.5rem dashed variables.$base-color;
         }
-
+        
+        .formations-title {
+            margin-top: 2rem;
+        }
+        
+        .formations-list-item{
+            margin-bottom: 1rem;
+        }
         .what {
             font-weight: variables.$semibold;
             color: variables.$base-color;
@@ -135,19 +163,28 @@
             margin-left: 20%;
         }
 
+        .what-content{
+            text-indent: 1.5rem;
+            color: variables.$base-color;
+        }
+        .what-content:before{
+            content: '\27A4';
+            margin-right: 0.3rem;
+        }
+
+        .what-content-details{
+            color: black;
+            font-weight: variables.$semibold;
+        }
+
         .description {
             margin-left: 5%;
-            text-indent: 1.5rem;
         }
 
         .how {
             text-align: center;
             margin: 0.5rem;
-            margin-bottom: 1rem;
             font-size: 0.8rem;
-        }
-        .formations-title {
-            margin-top: 2rem;
         }
 
         .opquast {
