@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 //import PropTypes from 'prop-types';
 
-import AppBackground from '/assets/js/general/components/background';
+import AppBackground from '/assets/js/general/components/Background';
 import Nav from '/assets/js/general/containers/Nav';
 import Footer from '/assets/js/general/components/Footer';
 import NotFound from '/assets/js/general/components/NotFound';
